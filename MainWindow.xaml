@@ -1,0 +1,28 @@
+﻿<Window x:Class="DocumentsApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DocumentsApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="650">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Height" Value="25" />
+            <Setter Property="Width" Value="80" />
+            <Setter Property="Margin" Value="25 5 25 5" />
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <RichTextBox x:Name="docBox" Margin="10,10,10,0" />
+        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center">
+            <Button Content="Сохранить" Click="Save_Click" Width="90" />
+            <Button Content="Загрузить"  Click="Load_Click" Width="90" />
+        </StackPanel>
+        <TextBlock HorizontalAlignment="Left" Margin="10,5,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Height="21" Width="75" FontSize="17"><Run Language="ru-ru" Text="Блокнот"/></TextBlock>
+    </Grid>
+</Window>
